@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <td>No</td>
+  <td>Id</td>
+  <td>Nama</td>
+  <td>Nomor KTP</td>
+  <td>Alamat</td>
+    <td>Aksi</td>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let ang of anggotaList; let  i = index">
+    <td>{{i + 1}}</td>
+    <td>{{ang.id}}</td>
+    <td>{{ang.nama}}</td>
+    <td>{{ang.nomorKtp}}</td>
+    <td>{{ang.alamat}}</td>
+    <td><button type="submit" (click)="edit(ang.id)"  class="btn btn-primary" [routerLink]="[ '/anggota-edit', ang.id]">Edit</button> </td>
+  </tr>
+  </tbody>
+</table>
+

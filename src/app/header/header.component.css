@@ -1,0 +1,15 @@
+.navbar{
+  background: black;
+}
+
+.navbar.navbar-no-bg{
+  background: #444;
+}
+
+.navbar-dark . navbar-nav{
+  font-size: 15px;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+  color: aliceblue;
+}

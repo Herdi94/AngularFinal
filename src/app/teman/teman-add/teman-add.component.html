@@ -1,0 +1,35 @@
+<h4>Add a New Friend</h4>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group row">
+        <label for="inputNama" class="col-sm-3 form-control label">
+          Name
+        </label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" value="{{temanChild.nama}}" [(ngModel)]="inputInfo.nama" id="inputNama">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputEmail" class="col-sm-3 form-control label">
+          Email
+        </label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" value="{{temanChild.email}}" [(ngModel)]="inputInfo.email" id="inputEmail" #inputEmail>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputContact" class="col-sm-3 form-control label">
+          Kontak
+        </label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" value="{{temanChild.contact}}" [(ngModel)]="inputInfo.contact" id="inputContact" #inputContact>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="tambahTeman(inputEmail)">Tambah Teman</button>
+
+  </div>
+</div>
+<br>
+<br>

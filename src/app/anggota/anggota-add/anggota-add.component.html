@@ -1,0 +1,51 @@
+<br/>
+
+<form [formGroup]="anggotaForm" (ngSubmit)="kirim()" style="alignment: center">
+  <div class="form-group row">
+    <label class="col-md-6 form-control-label" for="nama" style="text-align: left">Nama Anda:</label>
+    <div class="col-sm-7">
+      <input type="text" [formControlName]="'nama'" class="form-control">
+
+      <span *ngIf="!anggotaForm.get('nama').valid && anggotaForm.get('nama').touched" class="help-block">
+        <span *ngIf="anggotaForm.get('nama').errors['required']">
+          Wajib di isi!
+      </span>
+        <span *ngIf="anggotaForm.get('nama').errors['blank']">
+          Tidak boleh kosong!
+        </span>
+      </span>
+
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-md-6 form-control-label" for="NomorKtp" style="text-align: left">No. KTP Anda:</label>
+    <div class="col-sm-7">
+      <input type="text" [formControlName]="'nomorKtp'" class="form-control">
+      <span *ngIf="!anggotaForm.get('nomorKtp').valid && anggotaForm.get('nomorKtp').touched" class="help-block">
+        <span *ngIf="anggotaForm.get('nomorKtp').errors['required']">
+          Wajib Di isi!
+      </span>
+        <span *ngIf="anggotaForm.get('nomorKtp').errors['blank']">
+          Tidak boleh kosong!
+        </span>
+      </span>
+
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-md-6 form-control-label" for="alamat" style="text-align: left">Alamat Anda:</label>
+    <div class="col-sm-7">
+      <input type="text" [formControlName]="'alamat'" class="form-control">
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <button type="submit" class="form-control btn-info">Kirim</button>
+  </div>
+
+</form>
+
+<!--<app-anggota-list (anggotaAdded)="onAnggotaAdded($event)" [childListen]="parentTalk"></app-anggota-list>-->
+<app-anggota-list (dariChildKeParent)="onAnggotaEdit($event)" [childListen]="parentTalk"></app-anggota-list>

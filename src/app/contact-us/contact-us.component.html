@@ -1,0 +1,48 @@
+<br/>
+
+<form [formGroup]="contactForm" (ngSubmit)="kirim()" style="alignment: center">
+  <div class="form-group row">
+    <label class="col-md-6 form-control-label" for="username" style="text-align: left">Nama Anda:</label>
+    <div class="col-sm-7">
+      <input type="text" [formControlName]="'username'" class="form-control">
+
+      <span *ngIf="!contactForm.get('username').valid && contactForm.get('username').touched" class="help-block">
+        <span *ngIf="contactForm.get('username').errors['required']">
+          Wajib di isi!
+      </span>
+        <span *ngIf="contactForm.get('username').errors['blank']">
+          Tidak boleh kosong!
+        </span>
+      </span>
+
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-md-6 form-control-label" for="usermail" style="text-align: left">Email Anda:</label>
+    <div class="col-sm-7">
+      <input type="text" [formControlName]="'usermail'" class="form-control">
+      <span *ngIf="!contactForm.get('usermail').valid && contactForm.get('usermail').touched" class="help-block">
+        <span *ngIf="contactForm.get('usermail').errors['required']">
+          Wajib Di isi!
+      </span>
+        <span *ngIf="contactForm.get('usermail').errors['blank']">
+          Tidak boleh kosong!
+        </span>
+      </span>
+
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-md-6 form-control-label" for="usermsg" style="text-align: left">Pesan Anda:</label>
+    <div class="col-sm-7">
+      <input type="text" [formControlName]="'usermsg'" class="form-control">
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <button type="submit" class="form-control btn-info">Kirim</button>
+  </div>
+
+</form>
